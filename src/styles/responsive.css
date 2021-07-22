@@ -1,0 +1,139 @@
+@media screen and (max-width: 650px) {
+    .app-bar__logo {
+        display: none;
+    }
+
+    .app-bar .app-bar__navigation {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .app-bar .app-bar__navigation ul li a {
+        font-size: 22px;
+        text-shadow: 0 0 3px #00adb5;
+    }
+
+    .hero {
+        background-image: url("/images/heros/hero-image-small.jpg");
+    }
+
+    .restaurant .resto__name,
+    .resto__address {
+        margin: 30px auto 0 auto;
+    }
+
+    .restaurant .resto__image {
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .app-bar {
+        grid-template-columns: 1fr auto;
+        padding: 8px 32px;
+    }
+
+    .app-bar .app-bar__brand h1 {
+        font-size: 32px;
+    }
+
+    .app-bar .app-bar__menu {
+        display: none;
+    }
+
+    .app-bar .app-bar__navigation {
+        position: static;
+        width: 100%;
+    }
+
+    .app-bar .app-bar__navigation ul li {
+        display: inline-block;
+    }
+
+    .app-bar .app-bar__navigation ul li a {
+        display: inline-block;
+        width: 110px;
+        font-size: 22px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .hero {
+        background-image: url("/images/heros/hero-image-medium.jpg");
+    }
+
+    .restaurants {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .resto-item__content__name a {
+        font-size: 26px;
+    }
+
+    .resto-item__content__description {
+        font-size: 15px;
+    }
+
+    .restaurant {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .restaurant .resto__name,
+    .resto__address {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .restaurant .resto__main {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .add-review__container textarea {
+        width: 350px;
+        height: 50px;
+    }
+
+    .restaurant-item__not__found {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .hero {
+        background-image: url("/images/heros/hero-image-large.jpg");
+    }
+
+    .restaurants {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .add-review__container textarea {
+        width: 450px;
+        height: 50px;
+    }
+
+    .restaurant-item__not__found {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+    }
+
+    .hero {
+        background-image: url("/images/heros/hero-image-extra-large.jpg");
+    }
+
+    .restaurants {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .restaurant-item__not__found {
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+}

@@ -1,0 +1,498 @@
+/* 
+Main
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 15px;
+    color: #424242;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #393e46;
+    color: white;
+    padding: 8px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+div[tabindex="0"]:focus {
+    outline: 4px dashed grey;
+}
+
+/* 
+AppBar
+*/
+
+.app-bar {
+    position: fixed;
+    width: 100%;
+    padding: 8px 16px;
+    background-color: #00adb5;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    top: 0;
+    z-index: 999;
+}
+
+.app-bar .app-bar__menu {
+    display: flex;
+    align-items: center;
+}
+
+.app-bar .app-bar__menu button {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    padding: 8px 13px;
+    cursor: pointer;
+}
+
+.app-bar .app-bar__brand {
+    display: flex;
+    align-items: center;
+}
+
+.app-bar__logo {
+    width: 60px;
+    padding: 5px;
+}
+
+.app-bar .app-bar__brand h1 {
+    font-family: "Kaushan Script",
+        "Nunito Sans",
+        sans-serif;
+    color: #fff;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+    font-size: 30px;
+    padding: 5px 0;
+}
+
+.app-bar .app-bar__navigation {
+    position: absolute;
+    top: 70px;
+    left: -280px;
+    width: 240px;
+    transition: all 0.3s;
+    padding: 8px;
+    text-transform: capitalize;
+    overflow: hidden;
+}
+
+.app-bar .app-bar__navigation.open {
+    left: 0;
+}
+
+.app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 8px;
+    margin-bottom: 5px;
+    width: 60%;
+}
+
+.app-bar .app-bar__navigation ul li a:hover {
+    /* text-decoration: underline; */
+    transition: 0.5s;
+    color: #007965;
+}
+
+/* 
+Jumbotron
+*/
+
+.hero {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    min-height: 700px;
+    width: 100%;
+    /* background-image: url("/images/heros/hero-image.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.hero__inner {
+    margin: 0 auto;
+    width: 70%;
+    max-width: 750px;
+    padding: 20px 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero__title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 36px;
+    padding-top: 10px;
+}
+
+.hero__tagline {
+    color: #fff;
+    padding: 10px 30px;
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/* 
+Content
+*/
+
+main {
+    margin: 0 auto;
+}
+
+.content__label {
+    font-size: 32px;
+    font-weight: lighter;
+    text-align: center;
+    padding: 50px 8% 0 8%;
+}
+
+.content__label::after {
+    content: '';
+    margin-top: 16px;
+    display: block;
+    border-bottom: 1px solid #F0E3CA;
+}
+
+.restaurants {
+    margin: 50px auto auto;
+    padding: 0 25px 50px 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px 20px;
+}
+
+.resto-item {
+    margin: 16px auto;
+    box-shadow: 0 4px 8px 0 rgba(129, 129, 129, 0.705);
+    width: 100%;
+    border-radius: 30px 7px 10px 10px;
+    background-color: #fff;
+    /* overflow: hidden; */
+}
+
+.resto-item:hover {
+    box-shadow: 0 0 10px 0 #393e46;
+    transition: 0.3s;
+}
+
+
+.resto-item__header__rating p {
+    font-weight: normal;
+    text-align: right;
+    font-size: 16px;
+    color: #fff;
+    padding-right: 15px;
+    background-color: #00adb5;
+    border-radius: 30px 7px 0 0;
+}
+
+.resto-item__header__rating__score {
+    width: 15px;
+}
+
+.resto-item__header__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.resto-item__content {
+    padding: 15px 10px;
+}
+
+/* .resto-item__content__name {
+    margin-bottom: 5px;
+} */
+
+.resto-item__content h3 a {
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 0;
+    /* padding-bottom: 10px; */
+    color: #007965;
+}
+
+.resto-item__content__city {
+    font-size: 12px;
+    text-transform: capitalize;
+    color: #4d4d4d;
+}
+
+.resto-item__content__description {
+    margin-top: 16px;
+    font-size: 13px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+/* 
+restaurant
+*/
+
+.restaurant {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px 16px;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.restaurant .resto__name {
+    margin-top: 30px;
+    font-size: 25px;
+    color: #007965;
+    padding: 5px;
+}
+
+.restaurant .resto__address {
+    margin-top: -15px;
+}
+
+.restaurant .resto__image {
+    width: 100%;
+    max-width: 530px;
+    border-radius: 20px;
+}
+
+.restaurant .resto__info h4 {
+    margin: 8px 0;
+}
+
+.resto__info__rating,
+.resto__info__city,
+.resto__info__category {
+    font-weight: normal;
+}
+
+.resto__main__menus {
+    margin-top: 20px;
+}
+
+.resto__main__menus__foods {
+    margin-top: 4px;
+    border-top: 1px solid #00adb5;
+    border-bottom: 1px solid #00adb5;
+}
+
+.resto__main__menus__drinks {
+    margin-top: 14px;
+    border-top: 1px solid #bf1363;
+    border-bottom: 1px solid #bf1363;
+}
+
+.resto__main__reviews {
+    margin-top: 30px;
+}
+
+.resto__reviews__list {
+    width: 60%;
+    padding: 5px;
+    border-radius: 5px;
+    border-bottom: 1px solid #eeeeee;
+    background-color: #ededed;
+    margin-top: 15px;
+}
+
+.resto__reviews__list__name {
+    color: #00adb5;
+    display: inline;
+}
+
+.resto__reviews__list__date {
+    display: inline;
+    font-size: 15px;
+    color: #4d4d4d;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.resto__reviews__list__review {
+    margin-top: 5px;
+}
+
+/*
+    Like
+*/
+
+.like {
+    font-size: 18px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00adb5;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* add-review */
+
+.add-review {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.add-review__container {
+    width: 60%;
+    min-width: 300px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #C2B8A3;
+    margin-top: 15px;
+}
+
+.add-review__container h3 {
+    margin-bottom: 5px;
+}
+
+.add-review__container input,
+.add-review__container label,
+.add-review__container textarea {
+    display: block;
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin-bottom: 4px;
+}
+
+.add-review__container input,
+.add-review__container textarea {
+    border-style: 1px solid #4d4d4d;
+}
+
+.add-review__container input {
+    height: 45px;
+}
+
+.add-review__container textarea {
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.add-review__container .submitButton {
+    padding: 11px 12px;
+    background-color: #00adb5;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.add-review__container .submitButton:hover {
+    /* background: #2A6881; */
+    background-color: #00adb5;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+
+/*
+Footer
+*/
+
+footer {
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+    align-items: center;
+    background-color: #00adb5;
+}
+
+.footer__tagline {
+    font-size: 18px;
+    font-weight: 100;
+
+}
+
+.footer__name {
+    font-family: "Kaushan Script",
+        "Nunito Sans",
+        sans-serif;
+    text-decoration: none;
+    font-weight: 400;
+    color: #ffffff;
+    padding: 12px 5px;
+}
+
+/* favorite page */
+
+.query {
+    /* float: right; */
+    /* display: block; */
+    font-size: 15px;
+    margin: 15px 25px;
+    padding: 0 3px;
+    width: 250px;
+    height: 44px;
+    border-radius: 5px;
+}
+
+.restaurant-item__not__found {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.restaurant-item__not__found h3 {
+    text-align: center;
+    font-weight: normal;
+
+}
+
+/* skeleton UI */
+
+.skeleton {
+    user-select: none;
+    background-color: #eeeeee;
+    color: #eeeeee;
+}
